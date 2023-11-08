@@ -1,6 +1,7 @@
 # IDEs
 .vscode/
 .idea/
+.ipynb_checkpoints/
 
 # Intermediate Coverage file
 .coverage
