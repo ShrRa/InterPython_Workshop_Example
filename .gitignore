@@ -2,6 +2,8 @@
 .vscode/
 .idea/
 .ipynb_checkpoints/
+
+# venv and Jupyter Lab kernels folders
 kernTest/
 venv/
 lib/
