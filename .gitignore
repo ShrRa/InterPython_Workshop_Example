@@ -2,6 +2,9 @@
 .vscode/
 .idea/
 .ipynb_checkpoints/
+kernTest/
+venv/
+lib/
 
 # Intermediate Coverage file
 .coverage
