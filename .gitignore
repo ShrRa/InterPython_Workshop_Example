@@ -3,6 +3,9 @@
 .idea/
 .ipynb_checkpoints/
 
+#MacOS
+.DS_Store
+
 # venv and Jupyter Lab kernels folders
 kernTest/
 venv/
