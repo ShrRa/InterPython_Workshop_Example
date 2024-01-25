@@ -2,7 +2,7 @@
 
 
 def test_create_patient():
-    from inflammation.models import Patient
+    from lightcurves.models import Patient
 
     name = 'Alice'
     p = Patient(name=name)
