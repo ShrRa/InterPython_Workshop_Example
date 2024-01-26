@@ -4,7 +4,7 @@ import numpy as np
 import numpy.testing as npt
 
 def test_mean_mag_zeros():
-    from lightcurves.models import mean_mag
+    from lcanalyzer.models import mean_mag
 
     test_input = {'a':np.array([0, 0, 0]), 'b':np.array([0, 0, 0])}
     test_result = 0
@@ -12,7 +12,7 @@ def test_mean_mag_zeros():
     npt.assert_array_equal(mean_mag(test_input, 'a'), test_result)
 
 def test_mean_mag_integers():
-    from lightcurves.models import mean_mag
+    from lcanalyzer.models import mean_mag
 
     test_input = {'a':np.array([1, 2, 3]), 'b':np.array([4, 5, 6])}
     test_result = 2
@@ -21,7 +21,7 @@ def test_mean_mag_integers():
 
 
 def test_max_mag():
-    from lightcurves.models import max_mag
+    from lcanalyzer.models import max_mag
 
     test_input = {'a':np.array([0, 1, 2]), 'b':np.array([3, 4, 5])}
     test_result = 5
@@ -29,7 +29,7 @@ def test_max_mag():
     npt.assert_array_equal(max_mag(test_input, 'b'), test_result)
 
 def test_min_mag():
-    from lightcurves.models import min_mag
+    from lcanalyzer.models import min_mag
 
     test_input = {'a':np.array([0, 1, 2]), 'b':np.array([3, 4, 5])}
     test_result = 3
@@ -38,7 +38,7 @@ def test_min_mag():
     
 '''
 def test_find_peak_1D():
-    from lightcurves.models import find_peak
+    from lcanalyzer.models import find_peak
 
     test_input = np.array([0, 0, 1, 0, 0])
     test_result = 2
@@ -46,7 +46,7 @@ def test_find_peak_1D():
     npt.assert_array_equal(find_peak(test_input), test_result)
 
 def test_find_peak_2D():
-    from lightcurves.models import find_peak
+    from lcanalyzer.models import find_peak
 
     test_input = np.arange(6).reshape(3,2)
     test_result = np.array([2, 2])
@@ -56,7 +56,7 @@ def test_find_peak_2D():
 
 def test_calc_period():
     """Test that Lomb-Scargle period function returns the period of a sine wave to within 5 decimal places"""
-    from lightcurves.models import calc_period
+    from lcanalyzer.models import calc_period
     from astropy import units as u
 
     test_period = 0.5
@@ -71,7 +71,7 @@ def test_calc_period():
 
 def test_calc_period_zeros():
     """Test that Lomb-Scargle period function returns the reciprocal of test_min_freq for an array of all zeros"""
-    from lightcurves.models import calc_period
+    from lcanalyzer.models import calc_period
     from astropy import units as u
 
     test_array = np.arange(0, 1000, 0.001) * u.day

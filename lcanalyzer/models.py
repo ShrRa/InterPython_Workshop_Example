@@ -13,35 +13,40 @@ from astropy.timeseries import LombScargle
 
 def load_dataset(filename):
     """Load a table from CSV file.
-
-    :param filename: The name of the file to load
+    
+    :param filename: The name of the .csv file to load
+    :returns: pd.DataFrame with the data from the file.
     """
     return pd.read_csv(filename)
 
 
-def mean_mag(data,magCol):
+def mean_mag(data,mag_col):
     """Calculate the mean magnitude of a lightcurve"""
-    return np.mean(data[magCol], axis=0)
+    return np.mean(data[mag_col], axis=0)
 
 
-def max_mag(data,magCol):
+def max_mag(data,mag_col):
     """Calculate the max magnitude of a lightcurve"""
-    return data[magCol].max()
+    return data[mag_col].max()
 
 
-def min_mag(data,magCol):
-    """Calculate the min magnitude of a lightcurve"""
-    return data[magCol].min()
+def min_mag(data,mag_col):
+    """Calculate the min magnitude of a lightcurve
+    :param data: pd.DataFrame with observed magnitudes for a single source.
+    :param mag_col: a string with the name of the column for calculating the min value.
+    :returns: The min value of the column.
+    """
+    return data[mag_col].min()
 
 '''
 def find_peak(input, axis=None):
     """Return the indices of the maximum values along an axis
+    
     :param input: Input array
     """
     return np.argmax(input, axis)
 
 def calc_period(t, y, min_freq_search, max_freq_search):
-    
     """Calculate the period corresponding to the highest-power 
        frequency returned by astropy.timeseries.LombScargle
 
