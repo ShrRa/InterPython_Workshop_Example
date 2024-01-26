@@ -20,17 +20,17 @@ def load_dataset(filename):
 
 
 def mean_mag(data,magCol):
-    """Calculate the mean magnitude of a lightcurve."""
+    """Calculate the mean magnitude of a lightcurve"""
     return np.mean(data[magCol], axis=0)
 
 
 def max_mag(data,magCol):
-    """Calculate the max magnitude of a lightcurve."""
+    """Calculate the max magnitude of a lightcurve"""
     return data[magCol].max()
 
 
 def min_mag(data,magCol):
-    """Calculate the min magnitude of a lightcurve."""
+    """Calculate the min magnitude of a lightcurve"""
     return data[magCol].min()
 
 '''
