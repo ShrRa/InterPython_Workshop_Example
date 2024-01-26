@@ -6,11 +6,6 @@
 #MacOS
 .DS_Store
 
-# venv and Jupyter Lab kernels folders
-kernTest/
-venv/
-lib/
-
 # Intermediate Coverage file
 .coverage
 
