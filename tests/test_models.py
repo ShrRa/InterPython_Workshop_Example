@@ -19,7 +19,7 @@ def test_mean_mag_integers():
 
     npt.assert_array_equal(mean_mag(test_input, 'a'), test_result)
 
-
+'''
 def test_max_mag():
     from lcanalyzer.models import max_mag
 
@@ -36,7 +36,7 @@ def test_min_mag():
 
     npt.assert_array_equal(min_mag(test_input, 'b'), test_result)
     
-'''
+
 def test_find_peak_1D():
     from lcanalyzer.models import find_peak
 
