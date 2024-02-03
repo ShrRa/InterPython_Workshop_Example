@@ -22,7 +22,7 @@ def load_dataset(filename):
 
 def mean_mag(data,mag_col):
     """Calculate the mean magnitude of a lightcurve"""
-    return np.mean(data[mag_col], axis=0)
+    return data[mag_col].mean()
 
 
 def max_mag(data,mag_col):
