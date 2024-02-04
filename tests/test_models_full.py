@@ -71,6 +71,7 @@ def test_mean_mag(test_df, test_colname, expected):
     from lcanalyzer.models import mean_mag
     assert mean_mag(test_df, test_colname) == expected
 
+
 def test_max_mag_strings():
     # Test for TypeError when passing a string
     from lcanalyzer.models import max_mag
@@ -103,6 +104,30 @@ def test_mean_mag_negatives():
 
     assert mean_mag(test_input_df, test_input_colname) == test_output
 
+
+# Parametrization for mean_mag function testing
+@pytest.mark.parametrize(
+    "test_df, test_colname, expected",
+    [
+        (pd.DataFrame(data=[[0, 0, 0], 
+                            [0, 0, 0], 
+                            [0, 0, 0], 
+                            [0, 0, 0]], 
+                      columns=list("abc")),
+        "a",
+        ),
+        (pd.DataFrame(data=[[1, 1, 1], 
+                            [1, 1, 1], 
+                            [1, 1, 1], 
+                            [1, 1, 1]], 
+                      columns=list("abc")),
+        "b",
+        0),
+    ])
+def test_normalize_lc(test_df, test_colname, expected):
+    """Test how normalize_lc function works for arrays of positive integers."""
+    from lcanalyzer.models import mean_mag
+    assert normalize_lc(test_df, test_colname) == expected
 
     
 '''

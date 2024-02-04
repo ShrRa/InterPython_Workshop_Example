@@ -17,7 +17,11 @@ def load_dataset(filename):
     :param filename: The name of the .csv file to load
     :returns: pd.DataFrame with the data from the file.
     """
-    return pd.read_csv(filename)
+    if filename.endswith('.csv'):
+        df = pd.read_csv(filename)
+    elif filename.endswith('.pkl'):
+        df = pd.read_pickle(filename)
+    return df
 
 
 def mean_mag(data,mag_col):
@@ -37,6 +41,15 @@ def min_mag(data,mag_col):
     :returns: The min value of the column.
     """
     return data[mag_col].min()
+
+def normalize_lc(df,mag_col):
+    # Normalize a light curve
+    #if any(df[mag_col].abs() > 90):
+    #    raise ValueError(mag_col+' contains values with abs() larger than 90!')
+    min = models.min_mag(df,mag_col)
+    max = models.max_mag((df-min),mag_col)
+    lc = (df[mag_col]-min)/max
+    return lc
 
 '''
 def find_peak(input, axis=None):
