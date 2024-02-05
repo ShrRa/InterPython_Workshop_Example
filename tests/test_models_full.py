@@ -2,6 +2,7 @@
 
 import pandas as pd
 import pytest
+import numpy as np
 
 def test_max_mag_integers():
     # Test that max_mag function works for integers
@@ -105,29 +106,37 @@ def test_mean_mag_negatives():
     assert mean_mag(test_input_df, test_input_colname) == test_output
 
 
-# Parametrization for mean_mag function testing
+# Parametrization for normalize_lc function testing
 @pytest.mark.parametrize(
-    "test_df, test_colname, expected",
+    "test_input_df, test_input_colname, expected",
     [
-        (pd.DataFrame(data=[[0, 0, 0], 
-                            [0, 0, 0], 
-                            [0, 0, 0], 
-                            [0, 0, 0]], 
+        (pd.DataFrame(data=[[8, 9, 1], 
+                            [1, 4, 1], 
+                            [1, 2, 4], 
+                            [1, 4, 1]], 
                       columns=list("abc")),
-        "a",
-        ),
+        "b",
+        pd.Series(data=[1,0.285,0,0.285])),
         (pd.DataFrame(data=[[1, 1, 1], 
                             [1, 1, 1], 
                             [1, 1, 1], 
                             [1, 1, 1]], 
                       columns=list("abc")),
         "b",
-        0),
+        pd.Series(data=[np.NaN,np.NaN,np.NaN,np.NaN])),
+        (pd.DataFrame(data=[[0, 0, 0], 
+                            [0, 0, 0], 
+                            [0, 0, 0], 
+                            [0, 0, 0]], 
+                      columns=list("abc")),
+        "b",
+        pd.Series(data=[np.NaN,np.NaN,np.NaN,np.NaN])),
     ])
-def test_normalize_lc(test_df, test_colname, expected):
+def test_normalize_lc(test_input_df, test_input_colname, expected):
     """Test how normalize_lc function works for arrays of positive integers."""
-    from lcanalyzer.models import mean_mag
-    assert normalize_lc(test_df, test_colname) == expected
+    from lcanalyzer.models_full import normalize_lc
+    import pandas.testing as pdt
+    pdt.assert_series_equal(normalize_lc(test_input_df,test_input_colname),expected,check_exact=False,atol=0.01,check_names=False)
 
     
 '''
