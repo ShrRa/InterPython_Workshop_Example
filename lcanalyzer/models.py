@@ -17,11 +17,7 @@ def load_dataset(filename):
     :param filename: The name of the .csv file to load
     :returns: pd.DataFrame with the data from the file.
     """
-    if filename.endswith('.csv'):
-        df = pd.read_csv(filename)
-    elif filename.endswith('.pkl'):
-        df = pd.read_pickle(filename)
-    return df
+    return pd.read_csv(filename)
 
 
 def mean_mag(data,mag_col):

@@ -18,5 +18,4 @@
 .pytest_cache
 
 # Virtual environments
-venv/
-.venv/
+
