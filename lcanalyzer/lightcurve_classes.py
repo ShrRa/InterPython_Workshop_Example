@@ -109,4 +109,33 @@ class Supernova(LightCurve):
     self.sntype = sntype
 
 
+#===================================
+#LC inheritance vs composition
+#===================================
+
+class timeseries():
+  pass
+
+class lightcurve(timeseries):
+  pass
+
+class chirp(timeseries):
+  pass
+
+
+
+#*****VS composition***********#
+
+class mma_signal(lightcurve, chirp):
+  # the mma signal _is_ a lightcurve and a cirp
+  pass
+
+#*****VS inheritance***********#
+
+class mma_lightcurve(timeseries):
+  # the mma signal _contains_ a lightcurve and a chirp
+  def__init__(self):
+    self.emdata = lightcurve()
+    self.mmadata = chirp()
+
 
