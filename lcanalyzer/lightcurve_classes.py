@@ -134,7 +134,7 @@ class mma_signal(lightcurve, chirp):
 
 class mma_lightcurve(timeseries):
   # the mma signal _contains_ a lightcurve and a chirp
-  def__init__(self):
+  def __init__(self):
     self.emdata = lightcurve()
     self.mmadata = chirp()
 
