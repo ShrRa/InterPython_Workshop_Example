@@ -21,12 +21,12 @@ def load_dataset(filename):
 
 
 def mean_mag(data,mag_col):
-    """Calculate the mean magnitude of a lightcurve"""
+    """Calculate the mean magnitude of a lightcurve."""
     return data[mag_col].mean()
 
 
 def max_mag(data,mag_col):
-    """Calculate the max magnitude of a lightcurve"""
+    """Calculate the max magnitude of a lightcurve."""
     return data[mag_col].max()
 
 
