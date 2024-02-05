@@ -20,13 +20,23 @@ def load_dataset(filename):
     return pd.read_csv(filename)
 
 
-def mean_mag(data,mag_col):
-    """Calculate the mean magnitude of a lightcurve."""
+def mean_mag(data, mag_col):
+    """Calculate the mean magnitude of a lightcurve.
+    
+    :param data: input data
+           mag_col: Name of the column in the data file
+    :returns: mean of the mag_col column of the data file
+    """
     return data[mag_col].mean()
 
 
-def max_mag(data,mag_col):
-    """Calculate the max magnitude of a lightcurve."""
+def max_mag(data, mag_col):
+    """Calculate the max magnitude of a lightcurve.
+    
+    :param data: input data
+           mag_col: Name of the column in the data file
+    :returns: max of the mag_col column of the data file
+    """
     return data[mag_col].max()
 
 
