@@ -46,7 +46,7 @@ def min_mag(data,mag_col):
     """
     return data[mag_col].min()
 
-### Get maximum values for all bands
+### Get maximum values for all bands.
 def calc_stat(lc, bands, mag_col, stat = 'max'):
     stats = {
         'max':max_mag,
