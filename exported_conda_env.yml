@@ -21,7 +21,7 @@ dependencies:
   - brotli-python=1.0.9=py39he9d5cce_7
   - bzip2=1.0.8=h1de35cc_0
   - ca-certificates=2023.12.12=hecd8cb5_0
-  - certifi=2023.11.17=py39hecd8cb5_0
+  - certifi=2024.2.2=py39hecd8cb5_0
   - cffi=1.16.0=py39h6c40b1e_0
   - charset-normalizer=2.0.4=pyhd3eb1b0_0
   - comm=0.1.2=py39hecd8cb5_0
@@ -41,6 +41,7 @@ dependencies:
   - importlib-metadata=7.0.1=py39hecd8cb5_0
   - importlib_metadata=7.0.1=hd3eb1b0_0
   - importlib_resources=6.1.1=py39hecd8cb5_1
+  - iniconfig=1.1.1=pyhd3eb1b0_0
   - intel-openmp=2023.1.0=ha357a0b_43548
   - ipykernel=6.28.0=py39hecd8cb5_0
   - ipython=8.15.0=py39hecd8cb5_0
@@ -105,6 +106,7 @@ dependencies:
   - pillow=10.0.1=py39h7d39338_0
   - pip=23.3.1=py39hecd8cb5_0
   - platformdirs=3.10.0=py39hecd8cb5_0
+  - pluggy=1.0.0=py39hecd8cb5_1
   - prometheus_client=0.14.1=py39hecd8cb5_0
   - prompt-toolkit=3.0.43=py39hecd8cb5_0
   - psutil=5.9.0=py39hca72f7f_0
@@ -116,6 +118,7 @@ dependencies:
   - pyopenssl=23.2.0=py39hecd8cb5_0
   - pyparsing=3.0.9=py39hecd8cb5_0
   - pysocks=1.7.1=py39hecd8cb5_0
+  - pytest=7.4.0=py39hecd8cb5_0
   - python=3.9.18=h5ee71fb_0
   - python-dateutil=2.8.2=pyhd3eb1b0_0
   - python-fastjsonschema=2.16.2=py39hecd8cb5_0
