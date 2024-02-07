@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "lcanalyzer"
+version = "1.0.0"
+description = "Inspect light curves"
+authors = ["ShrRa"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+matplotlib = "^3.8.2"
+pandas = "^2.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.0.3"
+black = "^24.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
