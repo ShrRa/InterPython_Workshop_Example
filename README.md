@@ -1,5 +1,7 @@
-# Introduction
+# LcAnalyzer
+![Continuous Integration build in GitHub Actions](https://github.com/ShrRa/InterPython_Workshop_Example/workflows/CI/badge.svg)
 
+# Introduction
 This is a template software project repository used by the [Intermediate Python for Astronomical Software Development](https://shrra.github.io/python-intermediate-development/index.html).
 
 ## Purpose
