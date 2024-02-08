@@ -9,7 +9,8 @@ in a single or different bands.
 
 import pandas as pd
 import numpy as np
-from astropy.timeseries import LombScargle
+#from astropy.timeseries import LombScargle
+# removed this as you do not use LS for now
 
 def load_dataset(filename):
     """Load a table from CSV file.
