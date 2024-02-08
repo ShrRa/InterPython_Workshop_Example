@@ -58,3 +58,13 @@ def calc_stat(lc, bands, mag_col, stat = 'max'):
     for b in bands:
         stat_output[b + "_"+stat] = stats[stat](lc[b], mag_col)
     return stat_output
+
+def normalize_lc(df, mag_col):
+    # Normalize a light curve
+    if any(df[mag_col].abs() > 90):
+        raise ValueError(mag_col + " contains values with abs() larger than 90!")
+    min_data = min_mag(df, mag_col)
+    max_data = max_mag((df - min_data), mag_col)
+    lc = (df[mag_col] - min_data) / max_data
+    lc = lc.fillna(0)
+    return lc
