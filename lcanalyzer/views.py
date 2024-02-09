@@ -20,7 +20,7 @@ def plotUnfolded(data,mag_col,time_col,color,marker):
     )
     ax.minorticks_on()
     ax.set_xlabel("MJD (days)")
-    ax.set_ylabel('Mag')
+    ax.set_ylabel('Mag' + mag_col)
     ax.set_title('Light curve')
     fig.tight_layout()
     plt.show()
