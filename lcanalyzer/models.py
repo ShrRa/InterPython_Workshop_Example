@@ -21,12 +21,22 @@ def load_dataset(filename):
 
 
 def mean_mag(data,mag_col):
-    """Calculate the mean magnitude of a lightcurve."""
+    """Calculate the mean magnitude of a lightcurve.
+    
+    :parem data: pandas DataFrame with observed magnitudes of single source
+    :parem mag_col: a string for the name of the column to calculate the mean
+    :returns: a float with the mean of the column of the given DataFrame
+    """
     return data[mag_col].mean()
 
 
 def max_mag(data,mag_col):
-    """Calculate the max magnitude of a lightcurve."""
+    """Calculate the max magnitude of a lightcurve.
+    
+    :parem data: pandas DataFrame with observed magnitudes of single source
+    :parem mag_col: a string for the name of the column to calculate the max value
+    :returns: a float with the max value of the column of the given DataFrame
+    """
     return data[mag_col].max()
 
 
