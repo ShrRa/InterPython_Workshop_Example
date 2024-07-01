@@ -46,3 +46,11 @@ def min_mag(data,mag_col):
     :returns: The min value of the column.
     """
     return data[mag_col].min()
+
+def calc_stat(lc, bands, mag_col):
+    # Define an empty dictionary where we will store the results
+    stat = {}
+    # For each band get the maximum value and store it in the dictionary
+    for b in bands:
+        stat[b + "_max"] = max_mag(lc[b], mag_col)
+    return stat
