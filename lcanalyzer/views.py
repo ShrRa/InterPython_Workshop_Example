@@ -1,9 +1,9 @@
 """Module containing code for plotting a lightcurve."""
 
 from matplotlib import pyplot as plt
-import pandas as pd
-    
-def plotUnfolded(data,mag_col,time_col,color,marker):
+#import pandas as pd
+
+def plot_unfolded(data,mag_col,time_col,color,marker):
     """
     Display plots of unfolded lightcurves in different bands.
     :param data: a table of observations of a single object in a single band
