@@ -30,16 +30,16 @@ jobs:
 
     - name: Install Python dependencies
       run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip3 install -r requirements.txt
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
 
     - name: Test with PyTest
       run: |
-        python3 -m pytest --cov=lcanalyzer.models tests/test_models.py
+        python -m pytest --cov=lcanalyzer.models tests/test_models.py
 
     - name: Check .py style with Pylint
       run: |
-        python3 -m pylint --fail-under=0 --reports=y lcanalyzer
+        python -m pylint --fail-under=0 --reports=y lcanalyzer
 
     - name: Check .ipynb style with Pylint
       run: |
