@@ -21,25 +21,25 @@ jobs:
     # Next we need to checkout out repository, and set up Python
     # A 'name' is just an optional label shown in the log - helpful to clarify progress - and can be anything
     - name: Checkout repository
-      uses: actions/checkout@v5
+      uses: actions/checkout@v4
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
     - name: Install Python dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        python3 -m pip install --upgrade pip
+        python3 -m pip3 install -r requirements.txt
 
     - name: Test with PyTest
       run: |
-        python -m pytest --cov=lcanalyzer.models tests/test_models.py
+        python3 -m pytest --cov=lcanalyzer.models tests/test_models.py
 
     - name: Check .py style with Pylint
       run: |
-        python -m pylint --fail-under=0 --reports=y lcanalyzer
+        python3 -m pylint --fail-under=0 --reports=y lcanalyzer
 
     - name: Check .ipynb style with Pylint
       run: |
