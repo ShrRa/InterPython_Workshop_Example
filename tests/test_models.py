@@ -18,6 +18,12 @@ import pytest
                       columns=list("abc")),
         "b",
         0),
+        (pd.DataFrame(data=[[0.1, 2.0, 0.5], 
+                            [0.4, 2.4, 0.6], 
+                            [0.8, 0.2, 0.4]], 
+                      columns=list("abc")),
+        "c",
+        0.6),
     ])
 def test_max_mag(test_df, test_colname, expected):
     """Test max function works for array of zeroes and positive integers."""
@@ -51,6 +57,12 @@ def test_max_mag_neg_integers():
                       columns=list("abc")),
         "b",
         0),
+        (pd.DataFrame(data=[[0.1, 2.0, 0.5], 
+                            [0.4, 2.4, 0.6], 
+                            [0.8, 0.2, 0.4]], 
+                      columns=list("abc")),
+        "c",
+        0.5),
     ])
 def test_mean_mag(test_df, test_colname, expected):
     """Test mean function works for array of zeroes and positive integers."""
