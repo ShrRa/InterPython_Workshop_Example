@@ -21,6 +21,7 @@ click==8.1.7
 colorama @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/colorama_1699472650914/work
 comm @ file:///C:/b/abs_67a8058udb/croot/comm_1709322909844/work
 contourpy @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/contourpy_1701817388761/work
+coverage==7.5.4
 cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
 debugpy @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/debugpy_1699554994633/work
 decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
@@ -96,6 +97,7 @@ PyQt5==5.15.10
 PyQt5-sip @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/pyqt-split_1699478669290/work/pyqt_sip
 PySocks @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/pysocks_1699473336188/work
 pytest==8.2.2
+pytest-cov==5.0.0
 python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
 python-json-logger @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/python-json-logger_1699543626759/work
 pytz @ file:///C:/b/abs_6ap4tsz1ox/croot/pytz_1713974360290/work
