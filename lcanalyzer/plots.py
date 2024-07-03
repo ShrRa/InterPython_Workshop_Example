@@ -1,7 +1,7 @@
 """Module containing code for plotting a lightcurve."""
 
 from matplotlib import pyplot as plt
-
+    
 def plotUnfolded(mjds,mags,mjd_label='Mjd (days)',mag_label='Mag',color='blue',marker='o'):
     fig = plt.figure(figsize=(7,5))
     ax = fig.add_subplot(1,1,1)

@@ -1,4 +1,4 @@
-from lightcurve import Lightcurve
+from lcanalyzer.lightcurve import Lightcurve
 import pandas as pd
 
 class Survey:
