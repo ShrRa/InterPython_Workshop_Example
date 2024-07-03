@@ -47,7 +47,10 @@ def min_mag(data, mag_col):
     """
     return data[mag_col].min()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> pylint-ci
 def calc_stats(lc, bands, mag_col):
     """Calculate max, mean and min values for all bands of a light curve
     :param lc: dict of pd.DataFrame with observed data for multiple sources/observations
@@ -70,7 +73,7 @@ def normalize_lc(df, mag_col):
     if any(df[mag_col].abs() > 90):
         raise ValueError(mag_col + " contains values with abs() larger than 90!")
     min_data = min_mag(df, mag_col)
-    max_data = max_mag((df - min), mag_col)
+    max_data = max_mag((df - min_data), mag_col)
     lc = (df[mag_col] - min_data) / max_data
     lc = lc.fillna(0)
     return lc
