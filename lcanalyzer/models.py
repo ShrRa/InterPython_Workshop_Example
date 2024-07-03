@@ -65,7 +65,10 @@ def calc_stats(lc, bands, mag_col):
 
 
 def normalize_lc(df, mag_col):
-    # Normalize a single light curve
+    """Normalize a single light curve
+    :parem mag_col: a string with the name of the column for magnitude
+    :returns: A column of the light curve that has been normalized
+    """
     if any(df[mag_col].abs() > 90):
         raise ValueError(mag_col + " contains values with abs() larger than 90!")
     min_data = min_mag(df, mag_col)
