@@ -40,8 +40,8 @@ jobs:
         
     - name: Check .py style with Pylint
       run: |
-        python3 -m pylint --fail-under=0 --reports=y lcanalyzer
+        python3 -m pylint --reports=y lcanalyzer
 
     - name: Check .ipynb style with Pylint
       run: |
-        python3 -m nbqa pylint --fail-under=0 light_curve_analysis.ipynb --disable=C0114
+        python3 -m nbqa pylint light_curve_analysis.ipynb --disable=C0114
