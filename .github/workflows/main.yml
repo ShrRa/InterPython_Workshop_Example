@@ -44,4 +44,4 @@ jobs:
 
     - name: Check .ipynb style with Pylint
       run: |
-        python3 -m nbqa pylint --fail-under=0 light-curve-analysis.ipynb --disable=C0114
+        python3 -m nbqa pylint --fail-under=0 light_curve_analysis.ipynb --disable=C0114
