@@ -114,7 +114,7 @@ def test_calc_stats():
 
 # Parametrization for normalize_lc function testing
 @pytest.mark.parametrize(
-    "test_input_df, test_input_colname, expected",
+    "test_input_df, test_input_colname, expected, expected_raises",
     [
         (pd.DataFrame(data=[[8, 9, 1], 
                             [1, 4, 1], 
@@ -122,23 +122,34 @@ def test_calc_stats():
                             [1, 4, 1]], 
                       columns=list("abc")),
         "b",
-        pd.Series(data=[1,0.285,0,0.285])),
+        pd.Series(data=[1,0.285,0,0.285]),
+        None),
         (pd.DataFrame(data=[[1, 1, 1], 
                             [1, 1, 1], 
                             [1, 1, 1], 
                             [1, 1, 1]], 
                       columns=list("abc")),
         "b",
-        pd.Series(data=[0.,0.,0.,0.])),
+        pd.Series(data=[0.,0.,0.,0.]),
+        None),
         (pd.DataFrame(data=[[0, 0, 0], 
                             [0, 0, 0], 
                             [0, 0, 0], 
                             [0, 0, 0]], 
                       columns=list("abc")),
         "b",
-         pd.Series(data=[0.,0.,0.,0.])),
+        pd.Series(data=[0.,0.,0.,0.]),
+        None),
+        (pd.DataFrame(data=[[8, 9, 1], 
+                            [1, -99.9, 1], 
+                            [1, 2, 4], 
+                            [1, 4, 1]], 
+                      columns=list("abc")),
+        "b",
+        pd.Series(data=[1,0.285,0,0.285]),
+        ValueError),
     ])
-def test_normalize_lc(test_input_df, test_input_colname, expected):
+def test_normalize_lc(test_input_df, test_input_colname, expected, expected_raises):
     """Test how normalize_lc function works for arrays of positive integers."""
     from lcanalyzer.models import normalize_lc
     import pandas.testing as pdt
