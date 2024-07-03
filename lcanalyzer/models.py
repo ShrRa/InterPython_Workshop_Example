@@ -47,10 +47,6 @@ def min_mag(data, mag_col):
     """
     return data[mag_col].min()
 
-<<<<<<< HEAD
-
-=======
->>>>>>> pylint-ci
 def calc_stats(lc, bands, mag_col):
     """Calculate max, mean and min values for all bands of a light curve
     :param lc: dict of pd.DataFrame with observed data for multiple sources/observations
