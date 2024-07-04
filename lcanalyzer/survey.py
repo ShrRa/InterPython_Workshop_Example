@@ -2,18 +2,31 @@ from lcanalyzer.lightcurve import Lightcurve
 import pandas as pd
 
 class Survey:
-    def __init__(self,
-                 filename,
-                 clean_nans = True,
-                 id_col="objectId",
-                 band_col="band",
-                 time_col="expMidptMJD",
-                 mag_col="psfMag",):
+    def __init__(
+        self,
+        filename: str,
+        clean_nans: bool = True,
+        id_col: str = "objectId",
+        band_col: str = "band",
+        time_col: str = "expMidptMJD",
+        mag_col: str = "psfMag",
+    ):
+        """
+        Initializes the Survey object by loading data from a file.
+
+        Parameters:
+            filename (str): The name of the file to load.
+            clean_nans (bool): Whether to clean NaNs in the data.
+            id_col (str): Column name for object IDs.
+            band_col (str): Column name for bands.
+            time_col (str): Column name for observation times.
+            mag_col (str): Column name for magnitudes.
+        """
         self.id_col = id_col
         self.band_col = band_col
         self.time_col = time_col
         self.mag_col = mag_col
-        self.data = self.load_table(filename, clean_nans)
+        self.data = self._load_table(filename, clean_nans)
         self.unique_objects = self.data[self.id_col].unique()
 
     def load_table(self, filename, clean_nans = True):
