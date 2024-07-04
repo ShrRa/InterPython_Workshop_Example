@@ -29,7 +29,7 @@ class Lightcurve:
         """ Check if the data is iterable and convert it into np.array, otherwise raise an exception
 
         Args:
-        :parem data: data to convert into an array
+        :parem data: lightcurve data to convert into an array
         :return: data converted to an np.array
         :raises: ValueError if the data is not iterable.
         """
